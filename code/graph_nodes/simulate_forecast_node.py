@@ -32,12 +32,18 @@ def simulate_forecast_node(state: RequestState) -> RequestState:
     )
 
     balances = engine.simulate_baseline_balances()
-    amt_safe = engine.calculate_amount_safe_to_pay(req_amt)
+    req_id = req.get("request_id")
+    mc_stats = engine.run_monte_carlo_analysis(req_amt, request_id=req_id)
+    amt_safe = engine.calculate_amount_safe_to_pay(req_amt, request_id=req_id)
     earliest_date = engine.find_earliest_date_for_full_payment(req_amt)
 
     return {
         **state,
         "balance_forecast": balances,
         "amount_safe_to_pay_raw": amt_safe,
-        "earliest_date_for_full_payment_raw": earliest_date
+        "earliest_date_for_full_payment_raw": earliest_date,
+        "mc_breach_probability": mc_stats["breach_probability"],
+        "mc_p95_margin": mc_stats["p95_margin"],
+        "mc_risk_adjusted_safe_amount": mc_stats["risk_adjusted_safe_amount"]
     }
+

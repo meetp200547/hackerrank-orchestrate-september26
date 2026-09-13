@@ -163,7 +163,8 @@ def main() -> None:
 
     # Generate evaluation/usage_report.md
     generate_usage_report(all_token_entries, len(requests), config.USAGE_REPORT_PATH)
-    print(f"Saved token usage report to {config.USAGE_REPORT_PATH}")
+    generate_usage_report(all_token_entries, len(requests), config.CODE_USAGE_REPORT_PATH)
+    print(f"Saved token usage report to {config.USAGE_REPORT_PATH} and {config.CODE_USAGE_REPORT_PATH}")
 
 
 if __name__ == "__main__":

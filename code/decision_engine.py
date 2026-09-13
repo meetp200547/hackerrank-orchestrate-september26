@@ -60,7 +60,7 @@ class DecisionEngine:
     def evaluate_candidates(self) -> list[dict[str, Any]]:
         candidates = []
         
-        amt_safe_raw = self.engine.calculate_amount_safe_to_pay(self.req_amount)
+        amt_safe_raw = self.engine.calculate_amount_safe_to_pay(self.req_amount, request_id=self.req_id)
         earliest_full_raw = self.engine.find_earliest_date_for_full_payment(self.req_amount)
 
         # -------------------------------------------------------------
@@ -181,7 +181,7 @@ class DecisionEngine:
     def select_best_decision(self) -> dict[str, Any]:
         candidates = self.evaluate_candidates()
         
-        amt_safe_raw = self.engine.calculate_amount_safe_to_pay(self.req_amount)
+        amt_safe_raw = self.engine.calculate_amount_safe_to_pay(self.req_amount, request_id=self.req_id)
         earliest_full_raw = self.engine.find_earliest_date_for_full_payment(self.req_amount)
 
         if not candidates:

@@ -8,11 +8,11 @@ This report summarizes token usage, model calls, and estimated costs for the ful
 
 - **Total Evaluation Requests**: 250
 - **Total Model Calls**: 261
-- **Total Input Tokens**: 7,436
-- **Total Output Tokens**: 3,018
-- **Total Tokens Combined**: 10,454
-- **Average Tokens / Request**: 41.82
-- **Estimated Total Cost**: $0.0015 USD
+- **Total Input Tokens**: 11,636
+- **Total Output Tokens**: 4,860
+- **Total Tokens Combined**: 16,496
+- **Average Tokens / Request**: 65.98
+- **Estimated Total Cost**: $0.0023 USD
 - **Estimated Cost / Request**: $0.0000 USD
 
 ---
@@ -21,9 +21,9 @@ This report summarizes token usage, model calls, and estimated costs for the ful
 
 | Provider / Model | Calls | Input Tokens | Output Tokens | Total Tokens | Estimated Cost (USD) |
 |---|---|---|---|---|---|
-| deterministic / template-generator | 210 | 0 | 0 | 0 | $0.0000 |
+| google-genai / gemini-3.5-flash-lite | 69 | 9,986 | 4,585 | 14,571 | $0.0021 |
 | google / gemini-3.5-flash-lite | 11 | 1,650 | 275 | 1,925 | $0.0002 |
-| google-genai / gemini-3.5-flash-lite | 40 | 5,786 | 2,743 | 8,529 | $0.0013 |
+| deterministic / template-generator | 181 | 0 | 0 | 0 | $0.0000 |
 
 ---
 

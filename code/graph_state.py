@@ -72,6 +72,9 @@ class RequestState(TypedDict, total=False):
     balance_forecast: list[float]  # 90 daily balances from request_date
     amount_safe_to_pay_raw: float  # pre-spending-change value
     earliest_date_for_full_payment_raw: str | None
+    mc_breach_probability: float  # Monte Carlo risk of dropping below min_balance
+    mc_p95_margin: float  # 5th percentile minimum balance margin
+    mc_risk_adjusted_safe_amount: float  # 95% confidence safe payment amount
 
     # --- set by rank_decision_node ---
     candidates: list[dict[str, Any]]  # ranked candidate plans, best first

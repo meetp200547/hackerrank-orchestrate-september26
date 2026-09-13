@@ -27,6 +27,7 @@ DATASET_DIR = REPO_ROOT / "dataset"
 MEDIA_IMAGES_DIR = DATASET_DIR / "media" / "images"
 OUTPUT_CSV_PATH = REPO_ROOT / "output.csv"
 USAGE_REPORT_PATH = REPO_ROOT / "evaluation" / "usage_report.md"
+CODE_USAGE_REPORT_PATH = REPO_ROOT / "code" / "evaluation" / "usage_report.md"
 LOG_FILE_PATH = REPO_ROOT / "log.txt"
 
 # Dataset Files
